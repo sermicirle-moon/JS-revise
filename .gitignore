@@ -1,0 +1,5 @@
+#node modules
+node_modules/
+#log and evn
+*.log
+*.env
