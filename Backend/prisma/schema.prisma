@@ -5,28 +5,15 @@
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["driverAdapters"] 
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-// 3. Định nghĩa bảng Người dùng
-model User {
-  id       Int     @id @default(autoincrement())
-  username String  @unique
-  email    String?
-  tasks    Task[]  // Mối quan hệ: 1 User có nhiều Task
-}
-
-// 4. Định nghĩa bảng Công việc
-model Task {
-  id            Int      @id @default(autoincrement())
-  title         String
-  isCompleted   Boolean  @default(false)
-  pomodoroCount Int      @default(0) // Số phiên tập trung
-  dueDate       DateTime?
-  userId        Int
-  user          User     @relation(fields: [userId], references: [id])
+model user{
+  id    Int @id @default(autoincrement())
+  username String @unique
+  password String
+  refresh  String?
 }
