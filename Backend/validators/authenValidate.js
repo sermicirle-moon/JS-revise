@@ -14,7 +14,6 @@ const registerValidate = (req, res, next) => {
     if (!/[a-z]/.test(password)) errors.push('Password must contain at least one lowercase letter');
     if (!/[0-9]/.test(password)) errors.push('Password must contain at least one number');
 
-    // Nếu có bất kỳ lỗi nào, chặn lại và trả về danh sách lỗi ngay!
     if (errors.length > 0) {
         return res.status(400).json({ errors: errors });
     }
