@@ -19,7 +19,7 @@ app.use(helmet());
 // 2. CORS: Kiểm duyệt biên giới. Chỉ cho phép Frontend được chỉ định mới có quyền gọi API.
 app.use(cors({
     // Ở localhost bạn dùng cổng của Live Server (VD: 5500). Khi lên mạng, đổi thành 'https://your-frontend-domain.com'
-    origin: 'http://localhost:5500', 
+    origin: 'http://localhost:5173', 
     credentials: true // Cho phép gửi nhận Cookie chứa Refresh Token
 }));
 
@@ -57,7 +57,7 @@ app.use('/api', authenRouter);
 // ==========================================
 // KHỞI ĐỘNG MÁY CHỦ
 // ==========================================
-const PORT = 3000;
+const PORT = 5500;
 app.listen(PORT, () => {
     console.log(`Server đang chạy an toàn trên cổng ${PORT}`);
 });
